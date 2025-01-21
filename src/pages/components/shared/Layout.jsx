@@ -1,14 +1,13 @@
 import React from "react";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
-import SeoData from "./SeoData";
+import Header from "./Header";
+import Navigation from "./Navigation";
 
 function Layout({ children }) {
   return (
     <div>
-      <Navbar />
+      <Header />
       <main>{children}</main>
-      <Footer />
+      <Navigation />
     </div>
   );
 }
