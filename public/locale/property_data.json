@@ -1,6 +1,7 @@
 [
   {
-    "propertyImage": "https://images.unsplash.com/photo-1600882346795-035c5e4d7bb2",
+    "id":1,
+    "propertyImage": ["https://images.unsplash.com/photo-1593642532973-d31b6557fa68","https://images.unsplash.com/photo-1593642532973-d31b6557fa68","https://images.unsplash.com/photo-1593642532973-d31b6557fa68"],
     "address": "New York City, New York, USA",
     "rating": 4.5,
     "views": 1234,
@@ -8,7 +9,8 @@
     "embedIframeSrc": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193596.2600279137!2d-74.14431277080642!3d40.697284634950485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1737485892810!5m2!1sen!2sin"
   },
   {
-    "propertyImage": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68",
+    "id":2,
+    "propertyImage": ["https://images.unsplash.com/photo-1593642532973-d31b6557fa68","https://images.unsplash.com/photo-1593642532973-d31b6557fa68","https://images.unsplash.com/photo-1593642532973-d31b6557fa68"],
     "address": "456 Oak Avenue, Austin, TX",
     "rating": 4.8,
     "views": 1523,
@@ -16,7 +18,8 @@
     "embedIframeSrc": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423284.0443528432!2d-118.74137404475245!3d34.0206084184884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27cb23%3A0x5b41a57e1c3c7ed2!2sAustin%2C%20TX%2C%20USA!5e0!3m2!1sen!2sin!4v1737485892810!5m2!1sen!2sin"
   },
   {
-    "propertyImage": "https://images.unsplash.com/photo-1580811369259-400c8a0f0155",
+    "id":3,
+    "propertyImage": ["https://images.unsplash.com/photo-1593642532973-d31b6557fa68","https://images.unsplash.com/photo-1593642532973-d31b6557fa68","https://images.unsplash.com/photo-1593642532973-d31b6557fa68"],
     "address": "789 Pine Lane, Denver, CO",
     "rating": 4.3,
     "views": 874,
@@ -24,7 +27,8 @@
     "embedIframeSrc": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423284.0443528432!2d-118.74137404475245!3d34.0206084184884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27cb23%3A0x5b41a57e1c3c7ed2!2sDenver%2C%20CO%2C%20USA!5e0!3m2!1sen!2sin!4v1737485892810!5m2!1sen!2sin"
   },
   {
-    "propertyImage": "https://images.unsplash.com/photo-1560841166-62e8991c5403",
+    "id":4,
+    "propertyImage": ["https://images.unsplash.com/photo-1593642532973-d31b6557fa68","https://images.unsplash.com/photo-1593642532973-d31b6557fa68","https://images.unsplash.com/photo-1593642532973-d31b6557fa68"],
     "address": "101 Cedar Drive, Miami, FL",
     "rating": 4.7,
     "views": 1923,
@@ -32,7 +36,8 @@
     "embedIframeSrc": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423284.0443528432!2d-118.74137404475245!3d34.0206084184884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27cb23%3A0x5b41a57e1c3c7ed2!2sMiami%2C%20FL%2C%20USA!5e0!3m2!1sen!2sin!4v1737485892810!5m2!1sen!2sin"
   },
   {
-    "propertyImage": "https://images.unsplash.com/photo-1496945051383-18935c4659be",
+    "id":5,
+    "propertyImage": ["https://images.unsplash.com/photo-1593642532973-d31b6557fa68","https://images.unsplash.com/photo-1593642532973-d31b6557fa68","https://images.unsplash.com/photo-1593642532973-d31b6557fa68"],
     "address": "202 Birch Boulevard, Seattle, WA",
     "rating": 4.9,
     "views": 2100,
@@ -40,7 +45,8 @@
     "embedIframeSrc": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423284.0443528432!2d-118.74137404475245!3d34.0206084184884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27cb23%3A0x5b41a57e1c3c7ed2!2sSeattle%2C%20WA%2C%20USA!5e0!3m2!1sen!2sin!4v1737485892810!5m2!1sen!2sin"
   },
   {
-    "propertyImage": "https://images.unsplash.com/photo-1506748686217-dc9bdb4b5d0e",
+    "id":6,
+    "propertyImage": ["https://images.unsplash.com/photo-1593642532973-d31b6557fa68","https://images.unsplash.com/photo-1593642532973-d31b6557fa68","https://images.unsplash.com/photo-1593642532973-d31b6557fa68"],
     "address": "303 Elm Street, Los Angeles, CA",
     "rating": 4.6,
     "views": 1124,
@@ -48,17 +54,19 @@
     "embedIframeSrc": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423284.0443528432!2d-118.74137404475245!3d34.0206084184884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27cb23%3A0x5b41a57e1c3c7ed2!2sLos%20Angeles%2C%20CA%2C%20USA!5e0!3m2!1sen!2sin!4v1737485892810!5m2!1sen!2sin"
   },
   {
-    "propertyImage": "https://images.unsplash.com/photo-1574107810598-f33d768727f7",
+    "id":7,
+    "propertyImage": ["https://images.unsplash.com/photo-1593642532973-d31b6557fa68","https://images.unsplash.com/photo-1593642532973-d31b6557fa68","https://images.unsplash.com/photo-1593642532973-d31b6557fa68"],
     "address": "404 Birch Lane, New York, NY",
-    "rating": 4.2,
+    "rating": 2.1,
     "views": 1560,
     "availability": "May to Sep",
     "embedIframeSrc": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423284.0443528432!2d-118.74137404475245!3d34.0206084184884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27cb23%3A0x5b41a57e1c3c7ed2!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1737485892810!5m2!1sen!2sin"
   },
   {
-    "propertyImage": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68",
+    "id":8,
+    "propertyImage": ["https://images.unsplash.com/photo-1593642532973-d31b6557fa68","https://images.unsplash.com/photo-1593642532973-d31b6557fa68","https://images.unsplash.com/photo-1593642532973-d31b6557fa68"],
     "address": "505 Maple Avenue, Chicago, IL",
-    "rating": 4.4,
+    "rating": 3.5,
     "views": 1345,
     "availability": "Mar to Aug",
     "embedIframeSrc": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423284.0443528432!2d-118.74137404475245!3d34.0206084184884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27cb23%3A0x5b41a57e1c3c7ed2!2sChicago%2C%20IL%2C%20USA!5e0!3m2!1sen!2sin!4v1737485892810!5m2"
