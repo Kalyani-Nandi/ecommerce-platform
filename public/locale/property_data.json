@@ -1,0 +1,73 @@
+[
+    {
+      "propertyImage": "https://images.unsplash.com/photo-1600882346795-035c5e4d7bb2",
+      "address": "123 Maple Street, Springfield, IL",
+      "rating": 4.5,
+      "views": 1234,
+      "availability": "Jan to Aug"
+    },
+    {
+      "propertyImage": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68",
+      "address": "456 Oak Avenue, Austin, TX",
+      "rating": 4.8,
+      "views": 1523,
+      "availability": "Mar to Jun"
+    },
+    {
+      "propertyImage": "https://images.unsplash.com/photo-1580811369259-400c8a0f0155",
+      "address": "789 Pine Lane, Denver, CO",
+      "rating": 4.3,
+      "views": 874,
+      "availability": "Apr to Dec"
+    },
+    {
+      "propertyImage": "https://images.unsplash.com/photo-1560841166-62e8991c5403",
+      "address": "101 Cedar Drive, Miami, FL",
+      "rating": 4.7,
+      "views": 1923,
+      "availability": "Feb to Jul"
+    },
+    {
+      "propertyImage": "https://images.unsplash.com/photo-1496945051383-18935c4659be",
+      "address": "202 Birch Boulevard, Seattle, WA",
+      "rating": 4.9,
+      "views": 2100,
+      "availability": "Jan to May"
+    },
+    {
+      "propertyImage": "https://images.unsplash.com/photo-1506748686217-dc9bdb4b5d0e",
+      "address": "303 Elm Street, Los Angeles, CA",
+      "rating": 4.6,
+      "views": 1124,
+      "availability": "Jun to Nov"
+    },
+    {
+      "propertyImage": "https://images.unsplash.com/photo-1574107810598-f33d768727f7",
+      "address": "404 Birch Lane, New York, NY",
+      "rating": 4.2,
+      "views": 1560,
+      "availability": "May to Sep"
+    },
+    {
+      "propertyImage": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68",
+      "address": "505 Maple Avenue, Chicago, IL",
+      "rating": 4.4,
+      "views": 1345,
+      "availability": "Mar to Aug"
+    },
+    {
+      "propertyImage": "https://images.unsplash.com/photo-1506748686217-dc9bdb4b5d0e",
+      "address": "606 Pine Road, San Francisco, CA",
+      "rating": 4.7,
+      "views": 1783,
+      "availability": "Jan to Apr"
+    },
+    {
+      "propertyImage": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68",
+      "address": "707 Cedar Boulevard, Portland, OR",
+      "rating": 4.5,
+      "views": 999,
+      "availability": "Jul to Dec"
+    }
+  ]
+  
