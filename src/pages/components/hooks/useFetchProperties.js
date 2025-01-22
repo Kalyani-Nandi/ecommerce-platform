@@ -45,7 +45,7 @@ const useFetchProperties = (productId = null) => {
     fetchPropertiesData();
   }, [productId]);
 
-  return { properties, property, loading, error };
+  return [properties, property, loading, error];
 };
 
 export default useFetchProperties;

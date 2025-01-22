@@ -6,7 +6,9 @@ import SkeletonLoader from "../loader/Skeleton";
 
 
 const ProductCardList = () => {
-    const { properties, loading, error } = useFetchProperties();
+    const [properties, loading, error] = useFetchProperties();
+    const data = { properties, loading, error }
+
     const [visibleCount, setVisibleCount] = useState(8);
     const [loadingMore, setLoadingMore] = useState(false);
     let lastLoggedPoint = 0;
@@ -54,7 +56,7 @@ const ProductCardList = () => {
         return <div>Error: {error}</div>;
     }
 
-    const visibleProperties = properties.slice(0, visibleCount);
+    const visibleProperties = properties?.slice(0, visibleCount);
 
 
     return (

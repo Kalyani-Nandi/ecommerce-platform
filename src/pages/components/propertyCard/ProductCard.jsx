@@ -19,7 +19,7 @@ const getStarColor = (rating) => {
 const ProductCard = ({ property }) => {
   const [isWishlisted, setIsWishlisted] = useState(false);
 
-  const starColor = getStarColor(property.rating);
+  const starColor = getStarColor(property?.rating);
 
   const toggleWishlist = () => {
     setIsWishlisted(!isWishlisted);
@@ -28,22 +28,22 @@ const ProductCard = ({ property }) => {
   return (
     <Link href={`/${property?.id}`} className={style.card}>
       <ProductSlider
-        images={property.propertyImage}
+        images={property?.propertyImage}
         address={property?.address}
       />
       <div className={style.info}>
         <div className={style.ratingCtn}>
           <p className={style.views}>
             <MdOutlineRemoveRedEye />
-            {property.views}
+            {property?.views}
           </p>
           <p className={style.rating} style={{ color: starColor }}>
             <FaStar style={{ color: starColor }} />
-            {property.rating || "No Rating"}
+            {property?.rating || "No Rating"}
           </p>
         </div>
-        <h2 className={style.address}>{property.address}</h2>
-        <p className={style.availability}>Available: {property.availability}</p>
+        <h2 className={style.address}>{property?.address}</h2>
+        <p className={style.availability}>Available: {property?.availability}</p>
 
         <span
           className={style.wishlistButton}

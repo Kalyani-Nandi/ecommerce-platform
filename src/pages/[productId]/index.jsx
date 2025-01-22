@@ -10,8 +10,11 @@ import SkeletonLoader from "../components/loader/Skeleton";
 function ProductPage() {
   const router = useRouter();
   const { productId } = router.query;
-  const { property, loading, error } = useFetchProperties(productId);
+  const [properties, property, loading, error] = useFetchProperties(
+    productId
+  );
 
+  const data = { properties, property, loading, error };
   if (loading) {
     return (
       <div>
@@ -23,16 +26,16 @@ function ProductPage() {
   }
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return <div>Error: {error || "something went wrong"}</div>;
   }
 
   return (
     <div>
       <SeoData title={"Product Details Page"} description={"Product details"} />
-      <ProductSlider images={property.propertyImage} address={property.address} />
+      <ProductSlider images={property?.propertyImage} address={property?.address} />
       <div>
-        <h2 className={style.address}>{property.address}</h2>
-        <p className={style.availability}>Available: {property.availability}</p>
+        <h2 className={style.address}>{property?.address}</h2>
+        <p className={style.availability}>Available: {property?.availability}</p>
       </div>
       <iframe
         className={style.map}
