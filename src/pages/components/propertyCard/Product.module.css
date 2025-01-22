@@ -2,18 +2,35 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .card {
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 300px;
   overflow: hidden;
   transition: transform 0.3s ease-in-out;
   position: relative;
 }
+/* Responsive styles */
+@media (max-width: 768px) { /* Mobile screen */
+    .card {
+      width: 45%;
+    }
+  }
+  
+  @media (min-width: 590px) and (max-width: 1024px) { /* Tablet screen */
+    .card {
+      width: 48%;
+    }
+  }
+  
+  @media (min-width: 1025px) { /* Desktop screen or larger */
+    .card {
+      width: 20%;
+    }
+  }
 
 .card:hover {
   transform: scale(1.05);

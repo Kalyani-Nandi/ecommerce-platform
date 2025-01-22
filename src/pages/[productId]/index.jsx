@@ -1,22 +1,20 @@
 import { useRouter } from "next/router";
 import ProductSlider from "../components/propertyCard/ProductSlider";
-import propertiesData from "../../../public/locale/property_data.json"; // Move JSON to src/data folder
 import { useEffect, useState } from "react";
 import style from "../components/propertyCard/Product.module.css";
+import useFetchProperties from "../components/hooks/useFetchProperties";
 
 function ProductPage() {
   const router = useRouter();
   const { productId } = router.query;
-  const [property, setProperty] = useState(null);
+  const { property, properties, loading, error } = useFetchProperties(productId);
 
-  useEffect(() => {
-    if (productId) {
-      setProperty(propertiesData[productId]);
-    }
-  }, [productId]);
-
-  if (!property) {
+  if (loading) {
     return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
   }
 
   return (

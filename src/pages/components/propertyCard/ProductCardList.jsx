@@ -1,84 +1,88 @@
 import React, { useEffect, useState } from "react";
 import style from "./Product.module.css";
-import propertiesData from "../../../../public/locale/property_data.json";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { FaStar } from "react-icons/fa";
 import Link from "next/link";
 import ProductSlider from "./ProductSlider";
 import { IoHeartSharp } from "react-icons/io5";
+import useFetchProperties from "../hooks/useFetchProperties";
 
 const getStarColor = (rating) => {
-  if (rating < 4 && rating <= 2) {
-    return "orange";
-  } else if (rating >= 4) {
-    return "green";
-  } else {
-    return "red";
-  }
+    if (rating < 4 && rating <= 2) {
+        return "orange";
+    } else if (rating >= 4) {
+        return "green";
+    } else {
+        return "red";
+    }
 };
 
 const ProductCard = ({ property }) => {
-  const [isWishlisted, setIsWishlisted] = useState(false);
+    const [isWishlisted, setIsWishlisted] = useState(false);
 
-  const starColor = getStarColor(property.rating);
+    const starColor = getStarColor(property.rating);
 
-  const toggleWishlist = () => {
-    setIsWishlisted(!isWishlisted);
-  };
+    const toggleWishlist = () => {
+        setIsWishlisted(!isWishlisted);
+    };
 
-  return (
-    <Link href={`/${property?.id}`} className={style.card}>
-      <ProductSlider
-        images={property.propertyImage}
-        address={property?.address}
-      />
-      <div className={style.info}>
-        <div className={style.ratingCtn}>
-          <p className={style.views}>
-            <MdOutlineRemoveRedEye />
-            {property.views}
-          </p>
-          <p className={style.rating} style={{ color: starColor }}>
-            <FaStar style={{ color: starColor }} />
-            {property.rating || "No Rating"}
-          </p>
-        </div>
-        <h2 className={style.address}>{property.address}</h2>
-        <p className={style.availability}>Available: {property.availability}</p>
+    return (
+        <Link href={`/${property?.id}`} className={style.card}>
+            <ProductSlider
+                images={property.propertyImage}
+                address={property?.address}
+            />
+            <div className={style.info}>
+                <div className={style.ratingCtn}>
+                    <p className={style.views}>
+                        <MdOutlineRemoveRedEye />
+                        {property.views}
+                    </p>
+                    <p className={style.rating} style={{ color: starColor }}>
+                        <FaStar style={{ color: starColor }} />
+                        {property.rating || "No Rating"}
+                    </p>
+                </div>
+                <h2 className={style.address}>{property.address}</h2>
+                <p className={style.availability}>Available: {property.availability}</p>
 
-        <span
-          className={style.wishlistButton}
-          onClick={(e) => {
-            e.preventDefault();
-            toggleWishlist();
-          }}
-        >
-          <IoHeartSharp
-            style={{
-              color: isWishlisted ? "red" : "#e2e8f0",
-              fontSize: "30px",
-            }}
-          />
-        </span>
-      </div>
-    </Link>
-  );
+                <span
+                    className={style.wishlistButton}
+                    onClick={(e) => {
+                        e.preventDefault();
+                        toggleWishlist();
+                    }}
+                >
+                    <IoHeartSharp
+                        style={{
+                            color: isWishlisted ? "red" : "#e2e8f0",
+                            fontSize: "30px",
+                        }}
+                    />
+                </span>
+            </div>
+        </Link>
+    );
 };
 
 const ProductCardList = () => {
-  const [properties, setProperties] = useState([]);
 
-  useEffect(() => {
-    setProperties(propertiesData);
-  }, []);
+    // Use the custom hook to fetch the properties
+    const { properties, loading, error } = useFetchProperties(); 
+    if (loading) {
+        return <div>Loading...</div>;
+    }
 
-  return (
-    <div className={style.cardList}>
-      {properties?.map((property, index) => (
-        <ProductCard key={index} property={property} />
-      ))}
-    </div>
-  );
+    if (error) {
+        return <div>Error: {error}</div>;
+    }
+    return (
+        <div className={style.cardList}>
+            {properties?.map((property, index) => (
+                <ProductCard key={index} property={property} />
+            ))}
+        </div>
+    );
 };
 
 export default ProductCardList;

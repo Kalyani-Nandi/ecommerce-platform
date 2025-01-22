@@ -1,10 +1,6 @@
-import Head from "next/head";
-import Image from "next/image";
+
 import { Geist, Geist_Mono } from "next/font/google";
-import styles from "@/styles/Home.module.css";
 import SeoData from "./components/shared/SeoData";
-import PropertyCard from "./components/propertyCard/PropertyCard";
-import GoogleMap from "./components/map/GoogleMap";
 import ProductCardList from "./components/propertyCard/ProductCardList";
 
 const geistSans = Geist({
