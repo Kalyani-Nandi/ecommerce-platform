@@ -5,8 +5,6 @@ import useFetchProperties from "../components/hooks/useFetchProperties";
 import SeoData from "../components/shared/SeoData";
 import SkeletonLoader from "../components/loader/Skeleton";
 
-
-
 function ProductPage() {
   const router = useRouter();
   const { productId } = router.query;
@@ -15,7 +13,10 @@ function ProductPage() {
   if (loading) {
     return (
       <div>
-        <SeoData title={"Product Details Page"} description={"Product details"} />
+        <SeoData
+          title={"Product Details Page"}
+          description={"Product details"}
+        />
         <SkeletonLoader />
         <SkeletonLoader />
       </div>
@@ -29,10 +30,15 @@ function ProductPage() {
   return (
     <div>
       <SeoData title={"Product Details Page"} description={"Product details"} />
-      <ProductSlider images={property.propertyImage} address={property.address} />
-      <div>
-        <h2 className={style.address}>{property.address}</h2>
-        <p className={style.availability}>Available: {property.availability}</p>
+      <ProductSlider
+        images={property?.propertyImage}
+        address={property?.address}
+      />
+      <div className={style.productDetails}>
+        <h2 className={style.address}>{property?.address}</h2>
+        <p className={style.availability}>
+          Available: {property?.availability}
+        </p>
       </div>
       <iframe
         className={style.map}
