@@ -9,27 +9,31 @@ const useFetchProperties = (productId = null) => {
   useEffect(() => {
     const fetchPropertiesData = async () => {
       try {
-        const response = await fetch("https://api.jsonbin.io/v3/b/679059e3acd3cb34a8d0d982", {
-          headers: {
-            "X-Master-Key": "$2a$10$myIgGw7sD9EupFO4zpY8rea7HaBpbAK.2Smj/GvK.QVF8qaIsSSsi",
-          },
-        });
+        const response = await fetch(
+          "https://api.jsonbin.io/v3/b/679059e3acd3cb34a8d0d982",
+          {
+            headers: {
+              "X-Master-Key":
+                "$2a$10$myIgGw7sD9EupFO4zpY8rea7HaBpbAK.2Smj/GvK.QVF8qaIsSSsi",
+            },
+          }
+        );
 
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
 
         const data = await response.json();
-        
+
         if (productId) {
-          // If productId is provided, find the specific property by id
-          const selectedProperty = data.record.find((item) => item.id == productId);
+          const selectedProperty = data.record.find(
+            (item) => item.id == productId
+          );
           setProperty(selectedProperty);
         } else {
-          // If no productId, return all properties
           setProperties(data.record);
         }
-        
+
         setLoading(false);
       } catch (error) {
         console.error("Error fetching properties:", error);
