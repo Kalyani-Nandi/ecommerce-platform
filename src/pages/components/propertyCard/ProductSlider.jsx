@@ -3,8 +3,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import style from "./Product.module.css";
+import Image from "next/image";
 
-function ProductSlider({ images,address }) {
+function ProductSlider({ images, address }) {
   const sliderSettings = {
     dots: true,
     infinite: true,
@@ -15,7 +16,9 @@ function ProductSlider({ images,address }) {
   return (
     <Slider {...sliderSettings}>
       {images?.map((image, idx) => (
-        <img
+        <Image
+          height={100}
+          width={100}
           key={idx}
           src={image}
           alt={`Image of ${address}`}

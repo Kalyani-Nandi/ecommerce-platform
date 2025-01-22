@@ -12,6 +12,7 @@
   overflow: hidden;
   transition: transform 0.3s ease-in-out;
   position: relative;
+  height: 350px;
 }
 
 .card:hover {
@@ -23,6 +24,9 @@
   height: 200px;
   object-fit: cover;
   border-radius: 10px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .info {
@@ -67,7 +71,7 @@
 
 @media (max-width: 768px) {
   .card {
-    width: 45%;
+    width: 46%;
   }
   .address {
     font-size: 12px;

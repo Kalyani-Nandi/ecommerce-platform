@@ -71,3 +71,9 @@
   color: #333;
   background-color: #f9f9f9;
 }
+
+@media (max-width: 768px) {
+  .main {
+    padding: 1rem;
+  }
+}

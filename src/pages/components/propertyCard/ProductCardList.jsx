@@ -9,11 +9,11 @@ import useFetchProperties from "../hooks/useFetchProperties";
 
 const getStarColor = (rating) => {
     if (rating < 4 && rating <= 2) {
-        return "orange";
+        return "red";
     } else if (rating >= 4) {
         return "green";
     } else {
-        return "red";
+        return "orange";
     }
 };
 
