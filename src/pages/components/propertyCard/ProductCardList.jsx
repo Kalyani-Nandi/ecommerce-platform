@@ -1,79 +1,52 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import style from "./Product.module.css";
-import { MdOutlineRemoveRedEye } from "react-icons/md";
-import { FaStar } from "react-icons/fa";
-import Link from "next/link";
-import ProductSlider from "./ProductSlider";
-import { IoHeartSharp } from "react-icons/io5";
 import useFetchProperties from "../hooks/useFetchProperties";
-
-const getStarColor = (rating) => {
-  if (rating < 4 && rating <= 2) {
-    return "orange";
-  } else if (rating >= 4) {
-    return "green";
-  } else {
-    return "red";
-  }
-    if (rating < 4 && rating <= 2) {
-        return "red";
-    } else if (rating >= 4) {
-        return "green";
-    } else {
-        return "orange";
-    }
-};
-
-const ProductCard = ({ property }) => {
-  const [isWishlisted, setIsWishlisted] = useState(false);
-
-  const starColor = getStarColor(property.rating);
-
-  const toggleWishlist = () => {
-    setIsWishlisted(!isWishlisted);
-  };
-
-  return (
-    <Link href={`/${property?.id}`} className={style.card}>
-      <ProductSlider
-        images={property.propertyImage}
-        address={property?.address}
-      />
-      <div className={style.info}>
-        <div className={style.ratingCtn}>
-          <p className={style.views}>
-            <MdOutlineRemoveRedEye />
-            {property.views}
-          </p>
-          <p className={style.rating} style={{ color: starColor }}>
-            <FaStar style={{ color: starColor }} />
-            {property.rating || "No Rating"}
-          </p>
-        </div>
-        <h2 className={style.address}>{property.address}</h2>
-        <p className={style.availability}>Available: {property.availability}</p>
-
-        <span
-          className={style.wishlistButton}
-          onClick={(e) => {
-            e.preventDefault();
-            toggleWishlist();
-          }}
-        >
-          <IoHeartSharp
-            style={{
-              color: isWishlisted ? "red" : "#e2e8f0",
-              fontSize: "30px",
-            }}
-          />
-        </span>
-      </div>
-    </Link>
-  );
-};
+import ProductCard from "./ProductCard";
 
 const ProductCardList = () => {
   const { properties, loading, error } = useFetchProperties();
+
+  const [propertyData, setPropertyData] = useState([]); // Loaded properties
+  const [page, setPage] = useState(1); // Current page
+  const [hasMore, setHasMore] = useState(true); // Check if there's more data
+  const propertiesPerPage = 4; // Number of properties to load per page
+  const observer = useRef();
+
+  // Load properties based on the current page
+  const loadProperties = useCallback(() => {
+    const startIndex = (page - 1) * propertiesPerPage;
+    const endIndex = page * propertiesPerPage;
+
+    const newProperties = properties.slice(startIndex, endIndex);
+
+    if (newProperties.length === 0) {
+      setHasMore(false); // No more data available
+    } else {
+      setPropertyData((prev) => [...prev, ...newProperties]);
+    }
+  }, [page]);
+
+  // Observe the last item for infinite scroll
+  const lastCardRef = useCallback(
+    (node) => {
+      if (observer.current) observer.current.disconnect();
+
+      observer.current = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting && hasMore) {
+          setPage((prevPage) => prevPage + 1); // Load the next page
+        }
+      });
+
+      if (node) observer.current.observe(node);
+    },
+    [hasMore]
+  );
+
+  // Fetch data when the page changes
+  useEffect(() => {
+    loadProperties();
+  }, [loadProperties]);
+
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -83,9 +56,19 @@ const ProductCardList = () => {
   }
   return (
     <div className={style.cardList}>
-      {properties?.map((property, index) => (
-        <ProductCard key={index} property={property} />
-      ))}
+      <div className={style.cardList}>
+        {propertyData?.map((property, index) => {
+          if (index === propertyData.length - 1) {
+            return (
+              <div ref={lastCardRef} key={property.id}>
+                <ProductCard property={property} />
+              </div>
+            );
+          }
+          return <ProductCard key={property.id} property={property} />;
+        })}
+        {!hasMore && <div>No more properties to load</div>}
+      </div>
     </div>
   );
 };
