@@ -9,6 +9,9 @@ const ProductCardList = () => {
     const [properties, loading, error] = useFetchProperties();
     const data = { properties, loading, error }
 
+    console.log(properties, loading, error);
+
+
     const [visibleCount, setVisibleCount] = useState(8);
     const [loadingMore, setLoadingMore] = useState(false);
     let lastLoggedPoint = 0;
@@ -53,7 +56,14 @@ const ProductCardList = () => {
     }
 
     if (error) {
-        return <div>Error: {error}</div>;
+        return (
+            <div className={style.cardList}>
+                {/* Show Skeleton Loaders when loading */}
+                {[...Array(visibleCount)].map((_, index) => (
+                    <SkeletonLoader key={index} />
+                ))}
+            </div>
+        );
     }
 
     const visibleProperties = properties?.slice(0, visibleCount);
