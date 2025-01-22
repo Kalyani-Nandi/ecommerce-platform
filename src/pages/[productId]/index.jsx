@@ -3,6 +3,7 @@ import ProductSlider from "../components/propertyCard/ProductSlider";
 import { useEffect, useState } from "react";
 import style from "../components/propertyCard/Product.module.css";
 import useFetchProperties from "../components/hooks/useFetchProperties";
+import SeoData from "../components/shared/SeoData";
 
 function ProductPage() {
   const router = useRouter();
@@ -19,7 +20,10 @@ function ProductPage() {
 
   return (
     <div>
-      <p></p>
+       <SeoData
+        title={"Product Details Page"}
+        description={'Product details'}
+      />
       <ProductSlider
         images={property.propertyImage}
         address={property.address}
